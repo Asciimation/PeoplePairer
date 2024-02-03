@@ -1,6 +1,6 @@
 public class Pair {
-    private String firstPerson;
-    private String secondPerson;
+    private final String firstPerson;
+    private final String secondPerson;
 
     public Pair(String first, String second){
         firstPerson = first;

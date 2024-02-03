@@ -15,11 +15,7 @@ public class TeamMember {
     }
 
     public Boolean IsPaired(){
-        if (teamMemberPair != null){
-            return true;
-        } else {
-            return false;
-        }
+        return teamMemberPair != null;
     }
 
     public void SetPair(TeamMember pair){

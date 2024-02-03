@@ -42,7 +42,11 @@ Run from IntelliJ or Maven.
 
 ## Help
 
-I think it might be possible for the code to get 'stuck' and you end up unable top pair everyone. I need to improve this! 
+I think it might be possible for the code to get 'stuck' and you end up unable to pair everyone if you have one team remaining with unpaired people who can't be paired together.
+
+To avoid this I added a 'retry' mechanism when trying to find the second team with unpaired members where if this fails X number of times we throw away all pairs and try again.
+
+I ran this as a test with the sample data and left the code running in a loop and it failed to deadlock for over 2 Billion(!) iterations. 
 
 ## Version History
 
