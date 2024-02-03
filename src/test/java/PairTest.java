@@ -2,14 +2,14 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class DatePairTest {
+public class PairTest {
 
     @Test
     public void testGetFirstPerson() {
         String firstPerson = "First Person";
         String secondPerson = "Second Person";
-        DatePair datePair = new DatePair(firstPerson,secondPerson);
-        String person = datePair.getFirstPerson();
+        Pair pair = new Pair(firstPerson,secondPerson);
+        String person = pair.getFirstPerson();
         assertEquals(person, firstPerson, "Person name not correct.");
     }
 
@@ -17,8 +17,8 @@ public class DatePairTest {
     public void testGetSecondPerson() {
         String firstPerson = "First Person";
         String secondPerson = "Second Person";
-        DatePair datePair = new DatePair(firstPerson,secondPerson);
-        String person = datePair.getSecondPerson();
+        Pair pair = new Pair(firstPerson,secondPerson);
+        String person = pair.getSecondPerson();
         assertEquals(person, secondPerson, "Person name not correct.");
     }
 }

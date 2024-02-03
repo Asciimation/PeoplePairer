@@ -1,6 +1,6 @@
-# Speed Dater
+# People Pairer
 
-A very simple Java console application to read in a file of teams and team members then pair them off for 'speed dating'.
+A very simple Java console application to read in a file of teams and team members then pair them off.
 
 ## Description
 

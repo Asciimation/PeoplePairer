@@ -1,6 +1,6 @@
 public class TeamMember {
     private String teamMemberName = "";
-    private TeamMember teamMemberDate = null;
+    private TeamMember teamMemberPair = null;
 
     public TeamMember (String name){
         teamMemberName = name;
@@ -11,18 +11,18 @@ public class TeamMember {
     }
 
     public TeamMember GetDate(){
-        return teamMemberDate;
+        return teamMemberPair;
     }
 
-    public Boolean HasDate(){
-        if (teamMemberDate != null){
+    public Boolean IsPaired(){
+        if (teamMemberPair != null){
             return true;
         } else {
             return false;
         }
     }
 
-    public void SetDate(TeamMember date){
-        teamMemberDate = date;
+    public void SetPair(TeamMember pair){
+        teamMemberPair = pair;
     }
 }

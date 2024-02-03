@@ -59,21 +59,21 @@ public class TeamTest {
         String testTeamName = "Test Team Name 1";
         Team team = new Team(testTeamName);
         TeamMember randomTeamMember = null;
-        randomTeamMember = team.GetRandomTeamMemberWithoutDate();
+        randomTeamMember = team.GetRandomUnpairedTeamMember();
         assertNull(randomTeamMember, "Random team member should be null for empty team.");
     }
 
     @Test
     public void testGetRandomTeamMemberOneWithDate(){
         String testTeamName = "Test Team Name 1";
-        String teamMemberWithoutDateName = "Without date";
+        String teamMemberWithoutPairName = "Without pair";
         Team team = new Team(testTeamName);
-        TeamMember teamMemberWithDate = new TeamMember("Test Name 1");
-        TeamMember teamMemberWithoutDate = new TeamMember(teamMemberWithoutDateName);
-        teamMemberWithDate.SetDate(teamMemberWithoutDate);
-        assertTrue(team.AddTeamMember(teamMemberWithDate), "Team member should have been added");
+        TeamMember teamMemberWithPair = new TeamMember("Test Name 1");
+        TeamMember teamMemberWithoutPair = new TeamMember(teamMemberWithoutPairName);
+        teamMemberWithPair.SetPair(teamMemberWithoutPair);
+        assertTrue(team.AddTeamMember(teamMemberWithPair), "Team member should have been added");
         TeamMember randomTeamMember = null;
-        randomTeamMember = team.GetRandomTeamMemberWithoutDate();
+        randomTeamMember = team.GetRandomUnpairedTeamMember();
         assertNull(randomTeamMember, "No team member should be returned.");
     }
 
@@ -84,24 +84,24 @@ public class TeamTest {
         assertTrue(team.AddTeamMember(new TeamMember("Test Name 1")), "Team member should have been added");
         assertTrue(team.AddTeamMember(new TeamMember("Test Name 2")), "Team member should have been added");
         TeamMember randomTeamMember = null;
-        randomTeamMember = team.GetRandomTeamMemberWithoutDate();
+        randomTeamMember = team.GetRandomUnpairedTeamMember();
         assertNotNull(randomTeamMember, "Random team member should be returned.");
     }
 
     @Test
     public void testGetRandomTeamMemberTwoMembersOneWithDate(){
         String testTeamName = "Test Team Name 1";
-        String teamMemberWithoutDateName = "Without date";
+        String teamMemberWithoutPairName = "Without pair";
         Team team = new Team(testTeamName);
-        TeamMember teamMemberWithDate = new TeamMember("Test Name 1");
-        TeamMember teamMemberWithoutDate = new TeamMember(teamMemberWithoutDateName);
-        teamMemberWithDate.SetDate(teamMemberWithoutDate);
-        assertTrue(team.AddTeamMember(teamMemberWithDate), "Team member should have been added");
-        assertTrue(team.AddTeamMember(teamMemberWithoutDate), "Team member should have been added");
+        TeamMember teamMemberWithPair = new TeamMember("Test Name 1");
+        TeamMember teamMemberWithoutPair = new TeamMember(teamMemberWithoutPairName);
+        teamMemberWithPair.SetPair(teamMemberWithoutPair);
+        assertTrue(team.AddTeamMember(teamMemberWithPair), "Team member should have been added");
+        assertTrue(team.AddTeamMember(teamMemberWithoutPair), "Team member should have been added");
         TeamMember randomTeamMember = null;
-        randomTeamMember = team.GetRandomTeamMemberWithoutDate();
+        randomTeamMember = team.GetRandomUnpairedTeamMember();
         assertNotNull(randomTeamMember, "Random team member 2 should be returned.");
-        assertEquals(randomTeamMember.GetName(), teamMemberWithoutDateName, "Team member name incorrect.");
+        assertEquals(randomTeamMember.GetName(), teamMemberWithoutPairName, "Team member name incorrect.");
     }
 
     @Test
@@ -112,7 +112,7 @@ public class TeamTest {
         assertTrue(team.AddTeamMember(new TeamMember("Test Name 2")), "Team member should have been added");
         assertTrue(team.AddTeamMember(new TeamMember("Test Name 3")), "Team member should have been added");
         TeamMember randomTeamMember = null;
-        randomTeamMember = team.GetRandomTeamMemberWithoutDate();
+        randomTeamMember = team.GetRandomUnpairedTeamMember();
         assertNotNull(randomTeamMember, "Random team member not returned from non empty team.");
     }
 }

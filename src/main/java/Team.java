@@ -39,33 +39,33 @@ public class Team {
         return teamMembers.size();
     }
 
-    public int GetNumberOfDatelessTeamMembers(){
-        int numberWithoutDate = 0;
+    public int GetNumberOfUnpairedTeamMembers(){
+        int numberUnpaired = 0;
         for (TeamMember teamMember : teamMembers) {
-            if (!teamMember.HasDate()){
-                numberWithoutDate++;
+            if (!teamMember.IsPaired()){
+                numberUnpaired++;
             }
         }
-        return numberWithoutDate;
+        return numberUnpaired;
     }
 
-    public TeamMember GetRandomTeamMemberWithoutDate(){
-        TeamMember teamMemberWithoutDate = null;
-        int numberOfDatelessTeamMembers = GetNumberOfDatelessTeamMembers();
-        if (numberOfDatelessTeamMembers == 0) {
-            return teamMemberWithoutDate;
+    public TeamMember GetRandomUnpairedTeamMember(){
+        TeamMember UnpairedTeamMember = null;
+        int numberOfUnpairedTeamMembers = GetNumberOfUnpairedTeamMembers();
+        if (numberOfUnpairedTeamMembers == 0) {
+            return UnpairedTeamMember;
         } else {
             Random rand = new Random();
             int randomIndex = 0;
             TeamMember teamMember = null;
-            while( teamMemberWithoutDate == null ) {
+            while( UnpairedTeamMember == null ) {
                 randomIndex = rand.nextInt(teamMembers.size());
                 teamMember = teamMembers.get(randomIndex);
-                if (!teamMember.HasDate()){
-                    teamMemberWithoutDate = teamMember;
+                if (!teamMember.IsPaired()){
+                    UnpairedTeamMember = teamMember;
                 }
             }
         }
-        return teamMemberWithoutDate;
+        return UnpairedTeamMember;
     }
 }

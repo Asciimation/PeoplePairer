@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class DateArranger {
+public class PairArranger {
     private final ArrayList<Team> myTeams = new ArrayList<Team>();
-    private final ArrayList<DatePair> dates = new ArrayList<DatePair>();
+    private final ArrayList<Pair> pairs = new ArrayList<Pair>();
+
+    static final int NUMBER_OF_RETRIES = 10;
 
     public void SetUp3TeamsWith9Members(){
 
@@ -43,25 +45,28 @@ public class DateArranger {
         myTeams.add(jokerTeam);
     }
 
-    public int GetNumberOfDaters(){
-        int numberOfDaters = 0;
+    public int GetNumberOfPeople(){
+        int numberOfPairs = 0;
         for (Team team : myTeams){
-            numberOfDaters = numberOfDaters + team.GetTeamSize();
+            numberOfPairs = numberOfPairs + team.GetTeamSize();
         }
-        return numberOfDaters;
+        return numberOfPairs;
     }
 
-    public void ArrangeDates(){
-        System.out.println("Creating dates...");
-        int numberOfDaters = GetNumberOfDaters();
-        if (numberOfDaters % 2 != 0){
+    public void ArrangePairs(){
+        System.out.println("Creating pairs...");
+        int numberOfPeople = GetNumberOfPeople();
+        if (numberOfPeople % 2 != 0){
             AddJoker();
-            numberOfDaters++;
+            numberOfPeople++;
         }
-        int numberOfPairs = numberOfDaters / 2;
-        System.out.println("There are " + numberOfDaters + " daters so " + numberOfPairs + " dates.");
+        int numberOfPairs = numberOfPeople / 2;
+        System.out.println("There are " + numberOfPeople + " people so " + numberOfPairs + " pairs.");
         for ( int i = 0; i < numberOfPairs; i++)
         {
+            Boolean pairingFailed = false;
+            int numberOfAttempts = 0;
+
             Team firstTeam = null;
             TeamMember teamMember1 = null;
             Team secondTeam = null;
@@ -70,40 +75,55 @@ public class DateArranger {
             // Choose a random first team.
             while (firstTeam == null) {
                 firstTeam = GetRandomOtherTeam(null);
-                if (firstTeam.GetNumberOfDatelessTeamMembers() == 0) {
+                if (firstTeam.GetNumberOfUnpairedTeamMembers() == 0) {
                     firstTeam = null;
                 }
             }
             // Choose a random second team.
+            numberOfAttempts = 0;
             while (secondTeam == null) {
+                if (numberOfAttempts > NUMBER_OF_RETRIES){
+                    System.out.println("Unable to find pair after " + NUMBER_OF_RETRIES + " attempts.");
+                    pairingFailed = true;
+                    break;
+                }
                 secondTeam = GetRandomOtherTeam(firstTeam);
-                if (secondTeam.GetNumberOfDatelessTeamMembers() == 0) {
+                if (secondTeam.GetNumberOfUnpairedTeamMembers() == 0) {
                     secondTeam = null;
                 }
+                numberOfAttempts++;
             }
-            // Chose a random team member from each team.
-            while (teamMember1 == null) {
-                teamMember1 = firstTeam.GetRandomTeamMemberWithoutDate();
-            }
-            while (teamMember2 == null) {
-                teamMember2 = secondTeam.GetRandomTeamMemberWithoutDate();
-            }
+            if ( pairingFailed ) {
+                ClearPairs();
+                pairingFailed = false;
+            } else {
+                // Chose a random team member from each team.
+                while (teamMember1 == null) {
+                    teamMember1 = firstTeam.GetRandomUnpairedTeamMember();
+                }
+                while (teamMember2 == null) {
+                    teamMember2 = secondTeam.GetRandomUnpairedTeamMember();
+                }
 
-            // Set dates.
-            System.out.println("Pairing: " + firstTeam.GetTeamName() + ":" + teamMember1.GetName() + " with " + secondTeam.GetTeamName() + ":" + teamMember2.GetName());
-            teamMember1.SetDate(teamMember2);
-            teamMember2.SetDate(teamMember1);
-            DatePair datePair = new DatePair(teamMember1.GetName(), teamMember2.GetName());
-            dates.add(datePair);
-
+                System.out.println("Pairing: " + firstTeam.GetTeamName() + ":" + teamMember1.GetName() + " with " + secondTeam.GetTeamName() + ":" + teamMember2.GetName());
+                teamMember1.SetPair(teamMember2);
+                teamMember2.SetPair(teamMember1);
+                Pair pair = new Pair(teamMember1.GetName(), teamMember2.GetName());
+                pairs.add(pair);
+            }
         }
     }
 
-    public void OutputDates(){
-        System.out.println("Dates...");
-        for (DatePair datePair : dates){
-            System.out.println(datePair.getFirstPerson() + "/" + datePair.getSecondPerson());
+    public void OutputPairs(){
+        System.out.println("Pairs...");
+        for (Pair pair : pairs){
+            System.out.println(pair.getFirstPerson() + "/" + pair.getSecondPerson());
         }
+    }
+
+    public void ClearPairs(){
+        System.out.println("Clearing all pairs...");
+        pairs.clear();
     }
 
     public boolean AddTeam (Team team) {

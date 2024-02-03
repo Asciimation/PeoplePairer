@@ -24,7 +24,7 @@ public class TeamMemberTest {
     public void testHasDateWithNoneSet() {
         String testName = "Test Name 1";
         TeamMember teamMember = new TeamMember(testName);
-        assertFalse(teamMember.HasDate(), "Should be false.");
+        assertFalse(teamMember.IsPaired(), "Should be false.");
     }
 
     @Test
@@ -33,7 +33,7 @@ public class TeamMemberTest {
         TeamMember teamMember = new TeamMember(testName);
         String dateName = "Test Date Name 1";
         TeamMember teamMemberDate = new TeamMember(dateName);
-        teamMember.SetDate(teamMemberDate);
+        teamMember.SetPair(teamMemberDate);
         TeamMember returnedTeamMemberDate = teamMember.GetDate();
         assertEquals(dateName, returnedTeamMemberDate.GetName(), "Team member name returned is not correct.");
     }
@@ -42,9 +42,9 @@ public class TeamMemberTest {
     public void testHasDateWithDateSet() {
         String testName = "Test Name 1";
         TeamMember teamMember = new TeamMember(testName);
-        String dateName = "Test Date Name 1";
-        TeamMember teamMemberDate = new TeamMember(dateName);
-        teamMember.SetDate(teamMemberDate);
-        assertTrue(teamMember.HasDate(), "Should be true.");
+        String pairName = "Test Date Name 1";
+        TeamMember teamMemberDate = new TeamMember(pairName);
+        teamMember.SetPair(teamMemberDate);
+        assertTrue(teamMember.IsPaired(), "Should be true.");
     }
 }

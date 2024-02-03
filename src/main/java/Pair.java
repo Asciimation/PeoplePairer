@@ -1,8 +1,8 @@
-public class DatePair {
+public class Pair {
     private String firstPerson;
     private String secondPerson;
 
-    public DatePair (String first, String second){
+    public Pair(String first, String second){
         firstPerson = first;
         secondPerson = second;
     }

@@ -5,22 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6b4ea5b-e086-4643-b481-e7f0d686afeb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DateArranger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DatePair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/SpeedDater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/TeamMember.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DateArrangerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DatePairTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TeamMemberTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TeamTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DateArranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PairArranger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DatePair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpeedDater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PeoplePairer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TeamMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TeamMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DateArrangerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PairArrangerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DatePairTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PairTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TeamMemberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TeamMemberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TeamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TeamTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,18 +68,18 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.&lt;default&gt;">
-    <configuration name="SpeedDater" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SpeedDater" />
-      <module name="SpeedDater" />
+  <component name="RunManager" selected="Application.PeoplePairer">
+    <configuration name="PeoplePairer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PeoplePairer" />
+      <module name="PeoplePairer" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DateArrangerTest.testGetNumberOfDatersNoTeams" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SpeedDater" />
+    <configuration name="PairArrangerTest.testGetNumberOfDatersNoTeams" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="PeoplePairer" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DateArrangerTest" />
+      <option name="MAIN_CLASS_NAME" value="PairArrangerTest" />
       <option name="METHOD_NAME" value="testGetNumberOfDatersNoTeams" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -92,10 +88,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DateArrangerTest.testGetNumberOfDatersTwoTeamsOneMemberPerTeam" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SpeedDater" />
+    <configuration name="PairArrangerTest.testGetNumberOfDatersTwoTeamsOneMemberPerTeam" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="PeoplePairer" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DateArrangerTest" />
+      <option name="MAIN_CLASS_NAME" value="PairArrangerTest" />
       <option name="METHOD_NAME" value="testGetNumberOfDatersTwoTeamsOneMemberPerTeam" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -104,10 +100,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DateArrangerTest.testGetRandomOtherTeamTwoTeams" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SpeedDater" />
+    <configuration name="PairArrangerTest.testGetRandomOtherTeamTwoTeams" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="PeoplePairer" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DateArrangerTest" />
+      <option name="MAIN_CLASS_NAME" value="PairArrangerTest" />
       <option name="METHOD_NAME" value="testGetRandomOtherTeamTwoTeams" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -117,7 +113,7 @@
       </method>
     </configuration>
     <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SpeedDater" />
+      <module name="PeoplePairer" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="PACKAGE" />
       <properties />
@@ -128,11 +124,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PeoplePairer" />
         <item itemvalue="TestNG.&lt;default&gt;" />
-        <item itemvalue="Application.SpeedDater" />
-        <item itemvalue="TestNG.DateArrangerTest.testGetNumberOfDatersTwoTeamsOneMemberPerTeam" />
-        <item itemvalue="TestNG.DateArrangerTest.testGetNumberOfDatersNoTeams" />
-        <item itemvalue="TestNG.DateArrangerTest.testGetRandomOtherTeamTwoTeams" />
+        <item itemvalue="TestNG.PairArrangerTest.testGetNumberOfDatersTwoTeamsOneMemberPerTeam" />
+        <item itemvalue="TestNG.PairArrangerTest.testGetNumberOfDatersNoTeams" />
+        <item itemvalue="TestNG.PairArrangerTest.testGetRandomOtherTeamTwoTeams" />
       </list>
     </recent_temporary>
   </component>
@@ -167,14 +163,9 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/DatePairTest.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/PairTest.java</url>
           <line>4</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SpeedDater.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
